@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "904053963829",
+    "project_id": "shopappfromscratch",
+    "storage_bucket": "shopappfromscratch.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:904053963829:android:39337f18493278c7f9c57c",
+        "android_client_info": {
+          "package_name": "com.example.Ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "904053963829-chlbj7jjigq10dua77t3leu30tovectb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7dhGUFsW72PCEi9RgG54dreYjuDCO3lk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "904053963829-chlbj7jjigq10dua77t3leu30tovectb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
