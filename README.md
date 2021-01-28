@@ -3,7 +3,7 @@
 Flutter shop app linked to firebase firestore and firebase storage as database, and linked to firebase authenticaion for authentication.
 
 
-## Feautres
+## Features
 - Full authentication with firebase containing (Sign in, Sign up, logout).
 - State-management using provider.
 - Remember me function using SharedPreferences.
@@ -14,7 +14,7 @@ Flutter shop app linked to firebase firestore and firebase storage as database, 
 - User freindly screens with some many built-in animations.
 - Beautiful UI using stack to make drawer.
 - Adding or deleting products to your cart.
-- Adding or deleteing products to your favorite list.
+- Adding or deleting products to your favorite list.
 
 ## Screenshots
 <img src='Ecommerce-Screenshots/gif1.gif' width="300" /> 
