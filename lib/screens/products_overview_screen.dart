@@ -5,6 +5,7 @@ import 'package:Ecommerce/screens/toggle_screen.dart';
 import 'package:Ecommerce/widgets/list_view_products.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 class ProductsOverview extends StatefulWidget {
   @override
@@ -39,22 +40,22 @@ class _ProductsOverviewState extends State<ProductsOverview> {
                       },
                       child: CircleAvatar(
                         backgroundImage: NetworkImage(myUser.imageUrl),
-                        radius: 25,
+                        radius: 19.0.sp,
                       ),
                     );
                   },
                 ),
-                SizedBox(width: 20),
+                SizedBox(width: 5.0.w),
                 Text(
                   'Hi, ${myUser.userName}!',
-                  style: myGoogleFont(darkColor, 18, FontWeight.w600),
+                  style: myGoogleFont(darkColor, 13.5.sp, FontWeight.w600),
                 ),
                 Spacer(),
                 IconButton(
                     icon: Icon(
                       Icons.search_rounded,
                       color: darkColor,
-                      size: 30,
+                      size: 23.0.sp,
                     ),
                     onPressed: () {
                       setState(() {

@@ -39,6 +39,8 @@ dependencies:
   optimized_cached_image: ^1.0.0
   shared_preferences: ^0.5.12+4
   provider: ^4.3.2+4
+  sizer: ^1.1.8
+  device_preview: ^0.5.5
 
 dev_dependencies:
   flutter_test:

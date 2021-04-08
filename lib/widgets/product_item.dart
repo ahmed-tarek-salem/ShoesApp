@@ -5,6 +5,7 @@ import 'package:Ecommerce/screens/toggle_screen.dart';
 import 'package:Ecommerce/services/database_methods.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 class ProductItem extends StatelessWidget {
   @override
@@ -17,7 +18,7 @@ class ProductItem extends StatelessWidget {
         }));
       },
       child: Container(
-        margin: EdgeInsets.only(bottom: 10),
+        margin: EdgeInsets.only(bottom: 1.0.h),
         //  height: 220,
         width: double.infinity,
         decoration: BoxDecoration(
@@ -25,7 +26,7 @@ class ProductItem extends StatelessWidget {
           color: Color(0xffECEFF1),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 20),
+          padding: EdgeInsets.symmetric(vertical: 3.0.h, horizontal: 4.0.w),
           child: Column(
             children: [
               Align(
@@ -39,7 +40,7 @@ class ProductItem extends StatelessWidget {
                     myProduct.isFavorite
                         ? Icons.favorite_rounded
                         : Icons.favorite_border,
-                    size: 30,
+                    size: 23.0.sp,
                   ),
                 ),
                 alignment: Alignment.topRight,
@@ -48,8 +49,8 @@ class ProductItem extends StatelessWidget {
                 offset: Offset(0, -30),
                 child: Image.network(
                   myProduct.imageUrl,
-                  height: 115,
-                  width: 230,
+                  height: 19.0.h,
+                  width: 56.0.w,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -58,12 +59,12 @@ class ProductItem extends StatelessWidget {
                   Text(
                     myProduct.title,
                     textAlign: TextAlign.center,
-                    style: myGoogleFont(darkColor, 18, FontWeight.w700),
+                    style: myGoogleFont(darkColor, 14.0.sp, FontWeight.w700),
                   ),
-                  SizedBox(height: 5),
+                  SizedBox(height: 0.5.h),
                   Text(
                     '\$${myProduct.price}',
-                    style: myGoogleFont(darkColor, 15, FontWeight.w300),
+                    style: myGoogleFont(darkColor, 11.5.sp, FontWeight.w300),
                   )
                 ],
               )

@@ -5,6 +5,7 @@ import 'package:Ecommerce/widgets/empty_list.dart';
 import 'package:Ecommerce/widgets/product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 class ListViewProducts extends StatelessWidget {
   final bool showFavorite;
@@ -29,13 +30,14 @@ class ListViewProducts extends StatelessWidget {
                     return Column(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 20.0),
+                          padding: EdgeInsets.symmetric(vertical: 4.0.h),
                           child: Text(
                             showFavorite
                                 ? 'Explore your favorite list'
                                 : 'Find your perfect shoes',
                             textAlign: TextAlign.center,
-                            style: myGoogleFont(darkColor, 35, FontWeight.w600),
+                            style: myGoogleFont(
+                                darkColor, 27.0.sp, FontWeight.w600),
                           ),
                         ),
                         ChangeNotifierProvider.value(

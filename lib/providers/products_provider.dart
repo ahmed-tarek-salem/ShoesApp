@@ -7,17 +7,7 @@ import 'package:flutter/material.dart';
 class ProductsProvider with ChangeNotifier {
   List<Product> _items = [];
   List<Product> savedItems = [];
-  // List<Product> getItems() {
-  //   //get item because i use private item like this: _item And I use it private to handle it only from here so that I can call notifyListeners
-  //   if (_showFavItems) {
-  //     return [..._items]
-  //         .where((element) => element.isFavorite == true)
-  //         .toList();
-  //   } else
-  //     return [
-  //       ..._items
-  //     ]; // ... is a spread operator and here i'm using a refrence 'copy' From _items List
-  // }
+
   List<Product> getItems(bool showFav) {
     if (showFav) {
       return [..._items]

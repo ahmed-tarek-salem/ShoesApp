@@ -6,6 +6,7 @@ import 'package:Ecommerce/services/database_methods.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 class ChangePhoto extends StatefulWidget {
   const ChangePhoto({
@@ -88,17 +89,34 @@ class _ChangePhotoState extends State<ChangePhoto> {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      bottom: 50,
-      right: 20,
-      child: Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20), color: yellowColor),
-        child: IconButton(
-          onPressed: () {
-            selectImage(context);
-          },
-          color: Colors.white,
-          icon: Icon(Icons.camera_alt),
+      bottom: 7.8.h,
+      right: 5.0.w,
+      child: GestureDetector(
+        onTap: () {
+          selectImage(context);
+        },
+        child: Container(
+          padding: EdgeInsets.symmetric(
+            vertical: 2.0.w,
+            horizontal: 2.0.w,
+          ),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15.0.sp), color: yellowColor),
+          child: Icon(
+            Icons.camera_alt,
+            size: 20.0.sp,
+            color: Colors.white,
+          ),
+          // IconButton(
+          //   onPressed: () {
+          //     selectImage(context);
+          //   },
+          //   color: Colors.white,
+          //   icon: Icon(
+          //     Icons.camera_alt,
+          //     size: 20.0.sp,
+          //   ),
+          // ),
         ),
       ),
     );

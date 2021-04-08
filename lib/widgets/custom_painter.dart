@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:Ecommerce/constatns.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class DrawCircle extends CustomPainter {
   double currentProgress;
@@ -23,7 +24,7 @@ class DrawCircle extends CustomPainter {
       ..strokeCap = StrokeCap.round;
 
     Offset center = Offset(size.width / 2, size.height / 2);
-    double radius = 50;
+    double radius = 38.5.sp;
 
     canvas.drawCircle(
         center, radius, outerCircle); // this draws main outer circle

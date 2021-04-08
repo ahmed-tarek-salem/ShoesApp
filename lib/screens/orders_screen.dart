@@ -5,6 +5,7 @@ import 'package:Ecommerce/screens/empty_orders.dart';
 import 'package:Ecommerce/widgets/order_item.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 class OrdersScreen extends StatefulWidget {
   static const routeName = '/orders-screen';
@@ -34,25 +35,26 @@ class _OrdersScreenState extends State<OrdersScreen> {
             ? EmptyOrders()
             : Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10),
+                    EdgeInsets.symmetric(horizontal: 3.5.w, vertical: 1.5.h),
                 child: CustomScrollView(
                   slivers: [
                     SliverAppBar(
                       pinned: false,
-                      expandedHeight: 120,
+                      expandedHeight: 19.0.h,
                       leading: backArrow(context),
                       backgroundColor: Colors.grey[50],
                       flexibleSpace: FlexibleSpaceBar(
                         centerTitle: true,
                         title: Text(
                           'Orders',
-                          style: myGoogleFont(darkColor, 30, FontWeight.w500),
+                          style:
+                              myGoogleFont(darkColor, 23.0.sp, FontWeight.w500),
                         ),
                       ),
                     ),
                     SliverToBoxAdapter(
                       child: SizedBox(
-                        height: 30,
+                        height: 5.0.h,
                       ),
                     ),
                     SliverToBoxAdapter(
@@ -108,17 +110,17 @@ class BorderdContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        margin: EdgeInsets.only(right: 3),
-        padding: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+        margin: EdgeInsets.only(right: 1.0.w),
+        padding: EdgeInsets.symmetric(vertical: 1.0.h, horizontal: 1.5.w),
         decoration: BoxDecoration(
             border: isBorder
-                ? Border.all(color: yellowColor, width: 1)
+                ? Border.all(color: yellowColor, width: 1.0.sp)
                 : Border.all(width: 0, color: yellowColor),
             color: containerColor,
-            borderRadius: BorderRadius.circular(10)),
+            borderRadius: BorderRadius.circular(8.0.sp)),
         child: Text(
           text,
-          style: myGoogleFont(textColor, 17, FontWeight.w300),
+          style: myGoogleFont(textColor, 13.0.sp, FontWeight.w300),
         ),
       ),
     );

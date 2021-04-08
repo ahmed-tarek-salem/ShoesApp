@@ -1,7 +1,6 @@
 import 'package:Ecommerce/constatns.dart';
 import 'package:Ecommerce/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
 
 List<Map<String, String>> splashData = [
   {
@@ -36,12 +35,12 @@ class SplashContent extends StatelessWidget {
       children: [
         Image(
           image: AssetImage(image),
-          height: 50.0.h,
+          height: 350,
         ),
         Text(
           title,
           textAlign: TextAlign.center,
-          style: myGoogleFont(darkColor, 22.0.sp, FontWeight.w500),
+          style: myGoogleFont(darkColor, 30, FontWeight.w500),
         ),
         Spacer(),
         Padding(
@@ -49,12 +48,12 @@ class SplashContent extends StatelessWidget {
           child: Text(
             text,
             textAlign: TextAlign.center,
-            style: myGoogleFont(darkColor, 15.0.sp, FontWeight.w300),
+            style: myGoogleFont(darkColor, 20, FontWeight.w300),
           ),
         ),
         Spacer(),
         Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children:
                 List.generate(3, (index) => BuildDot(index, currentPage))),
       ],

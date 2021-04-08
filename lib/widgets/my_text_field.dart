@@ -1,5 +1,6 @@
 import 'package:Ecommerce/constatns.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class MyTextField extends StatelessWidget {
   final bool login;
@@ -14,12 +15,12 @@ class MyTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 30.0),
+      padding: EdgeInsets.only(bottom: 4.0.h),
       child: TextFormField(
         obscureText: isPassword == true ? true : false,
         style: isNameEdit == true
-            ? myGoogleFont(Colors.white, 20, FontWeight.w600)
-            : myGoogleFont(darkColor, 18, FontWeight.w500),
+            ? myGoogleFont(Colors.white, 15.5.sp, FontWeight.w600)
+            : myGoogleFont(darkColor, 14.0.sp, FontWeight.w500),
         controller: controller,
         validator: (val) {
           if (val.length == 0 && login != true) {
@@ -41,7 +42,7 @@ class MyTextField extends StatelessWidget {
               borderSide: BorderSide(color: darkColor, width: 1),
             ),
             hintText: hint,
-            hintStyle: TextStyle(color: Colors.grey[400]),
+            hintStyle: TextStyle(color: Colors.grey[400], fontSize: 15.0.sp),
             focusedBorder: UnderlineInputBorder(
                 borderSide: BorderSide(color: yellowColor, width: 1)),
             errorBorder: UnderlineInputBorder(

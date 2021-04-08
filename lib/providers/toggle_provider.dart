@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class ToggleProvider with ChangeNotifier {
   double xOffset = 0;
@@ -15,8 +16,8 @@ class ToggleProvider with ChangeNotifier {
   }
 
   changeToValues() {
-    xOffset = 230;
-    yOffset = 160;
+    xOffset = 56.0.w;
+    yOffset = 25.0.h;
     scaleFactor = 0.6;
     isDrawerOpen = true;
     notifyListeners();

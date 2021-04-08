@@ -9,6 +9,7 @@ import 'package:Ecommerce/screens/favorite_screen.dart';
 import 'package:Ecommerce/screens/products_overview_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -75,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
         color: Colors.white,
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 20),
+            padding: EdgeInsets.symmetric(horizontal: 7.0.w, vertical: 3.0.h),
             child: Column(
               children: [
                 Expanded(
@@ -101,11 +102,11 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                 ),
                 Align(
-                  alignment: Alignment.bottomRight,
+                  alignment: Alignment.bottomCenter,
                   child: Stack(
                     children: [
                       Container(
-                        height: 50,
+                        // height: 7.8.h,
                         width: double.infinity,
                         color: Colors.grey[100],
                       ),
@@ -123,50 +124,53 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                         width: double.infinity,
-                        height: 60,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            IconButton(
-                                icon: Icon(
-                                  Icons.home_filled,
-                                  size: 35,
-                                  color: currentPage == 0
-                                      ? darkColor
-                                      : Colors.grey[300],
-                                ),
-                                onPressed: () {
-                                  setState(() {
-                                    currentPage = 0;
-                                  });
-                                }),
-                            IconButton(
-                                icon: Icon(
-                                  Icons.favorite_outline,
-                                  size: 35,
-                                  color: currentPage == 1
-                                      ? darkColor
-                                      : Colors.grey[300],
-                                ),
-                                onPressed: () {
-                                  setState(() {
-                                    currentPage = 1;
-                                  });
-                                }),
-                            IconButton(
-                                icon: Icon(
-                                  Icons.shopping_cart_sharp,
-                                  size: 35,
-                                  color: currentPage == 2
-                                      ? darkColor
-                                      : Colors.grey[300],
-                                ),
-                                onPressed: () {
-                                  setState(() {
-                                    currentPage = 2;
-                                  });
-                                }),
-                          ],
+                        height: 9.0.h,
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              IconButton(
+                                  icon: Icon(
+                                    Icons.home_filled,
+                                    size: 27.0.sp,
+                                    color: currentPage == 0
+                                        ? darkColor
+                                        : Colors.grey[300],
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      currentPage = 0;
+                                    });
+                                  }),
+                              IconButton(
+                                  icon: Icon(
+                                    Icons.favorite_outline,
+                                    size: 27.0.sp,
+                                    color: currentPage == 1
+                                        ? darkColor
+                                        : Colors.grey[300],
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      currentPage = 1;
+                                    });
+                                  }),
+                              IconButton(
+                                  icon: Icon(
+                                    Icons.shopping_cart_sharp,
+                                    size: 27.0.sp,
+                                    color: currentPage == 2
+                                        ? darkColor
+                                        : Colors.grey[300],
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      currentPage = 2;
+                                    });
+                                  }),
+                            ],
+                          ),
                         ),
                       ),
                     ],

@@ -3,6 +3,7 @@ import 'package:Ecommerce/models/cart.dart';
 import 'package:Ecommerce/providers/cart_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 class CartItem extends StatelessWidget {
   final Cart cart;
@@ -32,23 +33,23 @@ class CartItem extends StatelessWidget {
       key: ValueKey(cart.myProduct.id),
       direction: DismissDirection.endToStart,
       background: Container(
-        margin: EdgeInsets.symmetric(vertical: 10),
+        margin: EdgeInsets.symmetric(vertical: 2.4.h),
         alignment: Alignment.centerRight,
         color: Colors.red,
-        child: Icon(Icons.delete, size: 50, color: Colors.white),
+        child: Icon(Icons.delete, size: 38.5.sp, color: Colors.white),
       ),
       onDismissed: (_) async {
         final cartProvider = Provider.of<CartProvider>(context, listen: false);
         await cartProvider.removeItem(cart.myProduct.id);
       },
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        padding: EdgeInsets.symmetric(vertical: 1.5.h),
         child: Row(
           children: [
             Expanded(
               flex: 2,
               child: Container(
-                height: 140,
+                height: 22.0.h,
                 decoration: BoxDecoration(
                   color: Colors.grey[100],
                   borderRadius: BorderRadius.circular(20),
@@ -58,11 +59,11 @@ class CartItem extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(width: 20),
+            SizedBox(width: 5.0.w),
             Expanded(
               flex: 3,
               child: Container(
-                height: 120,
+                height: 19.0.h,
                 // width: 180,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -75,14 +76,16 @@ class CartItem extends StatelessWidget {
                           child: Text(
                             cart.myProduct.title,
                             overflow: TextOverflow.ellipsis,
-                            style: myUpuntoFont(darkColor, 15, FontWeight.w700,
+                            style: myUpuntoFont(
+                                darkColor, 11.5.sp, FontWeight.w700,
                                 letterSpacing: -1),
                           ),
                         ),
-                        SizedBox(height: 10),
+                        SizedBox(height: 1.5.h),
                         Text(
                           '\$ ${cart.myProduct.price}',
-                          style: myUpuntoFont(darkColor, 18, FontWeight.w400,
+                          style: myUpuntoFont(
+                              darkColor, 14.0.sp, FontWeight.w400,
                               letterSpacing: -1),
                         )
                       ],
@@ -92,23 +95,24 @@ class CartItem extends StatelessWidget {
                         cart.size == null
                             ? Container()
                             : Padding(
-                                padding: const EdgeInsets.only(right: 10.0),
+                                padding: EdgeInsets.only(right: 2.0.w),
                                 child: CircleAvatar(
-                                  radius: 22,
+                                  radius: 17.0.sp,
                                   backgroundColor: darkColor,
                                   child: Text(
                                     '${cart.size}',
                                     style: myGoogleFont(
-                                        Colors.white, 17, FontWeight.w500),
+                                        Colors.white, 13.0.sp, FontWeight.w500),
                                   ),
                                 ),
                               ),
                         CircleAvatar(
-                          radius: 22,
+                          radius: 17.0.sp,
                           backgroundColor: Colors.grey[100],
                           child: Text(
                             'x${cart.quantity}',
-                            style: myGoogleFont(darkColor, 17, FontWeight.w500),
+                            style: myGoogleFont(
+                                darkColor, 13.0.sp, FontWeight.w500),
                           ),
                         ),
                       ],

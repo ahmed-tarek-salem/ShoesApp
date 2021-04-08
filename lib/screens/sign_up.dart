@@ -8,6 +8,7 @@ import 'package:Ecommerce/widgets/my_text_field.dart';
 import 'package:Ecommerce/widgets/radio_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class SignUp extends StatefulWidget {
   static const routeName = '/sign-up-screen';
@@ -17,9 +18,11 @@ class SignUp extends StatefulWidget {
 
 class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
   AnimationController controller;
+  Animation<double> animation;
+
   AnimationController backController;
   Animation<double> backAnimation;
-  Animation<double> animation;
+
   AuthMethods authMethods = AuthMethods();
   TextEditingController emailCont = TextEditingController();
   TextEditingController passCont = TextEditingController();
@@ -137,8 +140,8 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                       Center(
                         child: AnimatedContainer(
                           duration: Duration(milliseconds: 700),
-                          height: isSigningUp ? 150 : 200,
-                          width: 400,
+                          height: isSigningUp ? 23.0.h : 30.0.h,
+                          width: 100.0.w,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
@@ -151,7 +154,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                                   child: Text(
                                     'WELCOME',
                                     style: myGoogleFont(
-                                        darkColor, 40, FontWeight.w600),
+                                        darkColor, 30.5.sp, FontWeight.w600),
                                   ),
                                 ),
                               ),
@@ -162,8 +165,10 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                                 opacity: backAnimation,
                                 child: Text(
                                   'BACK!',
-                                  style: myGoogleFont(darkColor,
-                                      isSigningUp ? 0 : 40, FontWeight.w600),
+                                  style: myGoogleFont(
+                                      darkColor,
+                                      isSigningUp ? 0 : 30.5.sp,
+                                      FontWeight.w600),
                                 ),
                               ),
                               Transform.translate(
@@ -196,13 +201,14 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                                       }
                                     },
                                     child: CircleAvatar(
-                                      radius: 15,
+                                      radius: 11.5.sp,
                                       backgroundColor: Colors.white,
                                       child: Icon(
                                         isSigningUp
                                             ? Icons.arrow_forward_ios_outlined
                                             : Icons.arrow_back_ios_outlined,
                                         color: yellowColor,
+                                        size: 10.0.sp,
                                       ),
                                     ),
                                   ),
@@ -220,8 +226,8 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                       Form(
                         key: formkey,
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 40.0, vertical: 20),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 8.0.w, vertical: 3.0.h),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
@@ -252,7 +258,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                                     Text(
                                       'Remember me',
                                       style: myGoogleFont(
-                                          darkColor, 20, FontWeight.w500),
+                                          darkColor, 15.0.sp, FontWeight.w500),
                                     ),
                                     CupertinoSwitch(
                                       value: _switchValue,
@@ -267,8 +273,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(vertical: 15.0),
+                                padding: EdgeInsets.symmetric(vertical: 2.0.h),
                                 child: FadeTransition(
                                   opacity: animation,
                                   child: Row(
@@ -281,18 +286,18 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                                           });
                                         },
                                       ),
-                                      SizedBox(width: 10),
+                                      SizedBox(width: 1.0.w),
                                       Text('I agree with the',
                                           style: TextStyle(
-                                            fontSize: 15,
+                                            fontSize: 11.5.sp,
                                             fontWeight: FontWeight.w300,
                                             color: darkColor,
                                           )),
-                                      SizedBox(width: 3),
+                                      SizedBox(width: 1.0.w),
                                       Text(
                                         'User Agreement',
                                         style: TextStyle(
-                                            fontSize: 15,
+                                            fontSize: 11.5.sp,
                                             fontWeight: FontWeight.w300,
                                             color: Colors.blueAccent,
                                             decoration:
@@ -302,23 +307,24 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
                                   ),
                                 ),
                               ),
-                              SizedBox(height: 10),
+                              SizedBox(height: 1.0.h),
                               SizedBox(
                                 width: double.infinity,
-                                height: 60,
+                                height: 10.0.h,
                                 child: FlatButton(
                                   disabledColor: Colors.grey[200],
                                   color: yellowColor,
-                                  onPressed: (!radioValue && isSigningUp)
-                                      ? null
-                                      : () {
-                                          isSigningUp ? signUp() : login();
-                                        },
+                                  onPressed:
+                                      (radioValue == false && isSigningUp)
+                                          ? null
+                                          : () {
+                                              isSigningUp ? signUp() : login();
+                                            },
                                   child: Text(
                                     isSigningUp ? 'Sign up' : 'Log in',
                                     style: myGoogleFont(
                                         radioValue ? darkColor : Colors.white,
-                                        25,
+                                        19.0.sp,
                                         FontWeight.w500),
                                   ),
                                 ),

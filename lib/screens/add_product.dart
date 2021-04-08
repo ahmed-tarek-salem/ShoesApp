@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
+import 'package:sizer/sizer.dart';
 
 class AddProduct extends StatefulWidget {
   static const routeName = '/add-product';
@@ -101,7 +102,7 @@ class _AddProductState extends State<AddProduct> {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 20),
+            padding: EdgeInsets.symmetric(vertical: 2.5.h, horizontal: 5.0.w),
             child: Column(
               children: [
                 Row(
@@ -109,7 +110,7 @@ class _AddProductState extends State<AddProduct> {
                   children: [
                     IconButton(
                       icon: Icon(Icons.cancel_outlined),
-                      iconSize: 30,
+                      iconSize: 23.0.sp,
                       color: darkColor,
                       onPressed: () {
                         Navigator.pop(context);
@@ -119,7 +120,7 @@ class _AddProductState extends State<AddProduct> {
                     ),
                     IconButton(
                       icon: Icon(Icons.check_circle_outline_rounded),
-                      iconSize: 30,
+                      iconSize: 23.0.sp,
                       color: darkColor,
                       onPressed: () async {
                         if (formkey.currentState.validate()) {
@@ -143,7 +144,7 @@ class _AddProductState extends State<AddProduct> {
                   children: [
                     Text(
                       'Add product',
-                      style: myGoogleFont(darkColor, 32, FontWeight.w500),
+                      style: myGoogleFont(darkColor, 24.0.sp, FontWeight.w500),
                     ),
                   ],
                 ),
@@ -152,18 +153,18 @@ class _AddProductState extends State<AddProduct> {
                     await selectImage(context);
                   },
                   child: Container(
-                    height: 100,
-                    width: 100,
-                    margin: EdgeInsets.symmetric(vertical: 15),
+                    height: 15.0.h,
+                    width: 15.0.h,
+                    margin: EdgeInsets.symmetric(vertical: 2.5.h),
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(100),
-                        border: Border.all(color: darkColor, width: 1)),
+                        borderRadius: BorderRadius.circular(15.0.h),
+                        border: Border.all(color: darkColor, width: 1.0.sp)),
                     child: file != null
                         ? ClipRRect(
                             borderRadius: BorderRadius.circular(100),
                             child: Image.file(
                               file,
-                              height: 100,
+                              height: 15.5.h,
                               fit: BoxFit.cover,
                             ),
                           )
@@ -171,8 +172,8 @@ class _AddProductState extends State<AddProduct> {
                             child: Text(
                               'Add photo',
                               textAlign: TextAlign.center,
-                              style:
-                                  myGoogleFont(darkColor, 20, FontWeight.w200),
+                              style: myGoogleFont(
+                                  darkColor, 15.0.sp, FontWeight.w200),
                             ),
                           ),
                   ),
@@ -212,8 +213,9 @@ class ProductTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 15.0),
+      padding: EdgeInsets.symmetric(vertical: 2.5.h),
       child: TextFormField(
+        style: TextStyle(fontSize: 15.0.sp),
         controller: controller,
         validator: (val) {
           if (val.length == 0) return 'This Can not be empty';
@@ -221,8 +223,8 @@ class ProductTextField extends StatelessWidget {
         decoration: InputDecoration(
           labelText: label,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
-            borderSide: BorderSide(color: darkColor, width: 1),
+            borderRadius: BorderRadius.circular(15.0.sp),
+            borderSide: BorderSide(color: darkColor, width: 1.0.sp),
           ),
         ),
       ),

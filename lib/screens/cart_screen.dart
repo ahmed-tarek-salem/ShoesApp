@@ -7,6 +7,7 @@ import 'package:Ecommerce/widgets/cart_item.dart';
 import 'package:Ecommerce/widgets/my_button.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 class CartScreen extends StatefulWidget {
   static const routeName = '/cart-screen';
@@ -31,10 +32,13 @@ class _CartScreenState extends State<CartScreen> {
                     slivers: [
                       SliverAppBar(
                         pinned: true,
-                        expandedHeight: 130,
+                        expandedHeight: 20.0.h,
                         backgroundColor: Colors.white,
                         leading: IconButton(
-                          icon: Icon(Icons.remove_shopping_cart_rounded),
+                          icon: Icon(
+                            Icons.remove_shopping_cart_rounded,
+                            size: 23.0.sp,
+                          ),
                           onPressed: () async {
                             return await showDialog(
                                 context: context,
@@ -72,19 +76,20 @@ class _CartScreenState extends State<CartScreen> {
                         flexibleSpace: FlexibleSpaceBar(
                           title: Text(
                             'My cart',
-                            style: myGoogleFont(darkColor, 30, FontWeight.w500),
+                            style: myGoogleFont(
+                                darkColor, 23.0.sp, FontWeight.w500),
                           ),
                         ),
-                        actions: [
-                          IconButton(
-                            icon: Icon(
-                              Icons.search_rounded,
-                              size: 35,
-                              color: darkColor,
-                            ),
-                            onPressed: () {},
-                          ),
-                        ],
+                        // actions: [
+                        //   IconButton(
+                        //     icon: Icon(
+                        //       Icons.search_rounded,
+                        //       size: 27.0.sp,
+                        //       color: darkColor,
+                        //     ),
+                        //     onPressed: () {},
+                        //   ),
+                        // ],
                       ),
                       SliverList(
                         delegate: SliverChildBuilderDelegate((context, index) {
@@ -98,7 +103,7 @@ class _CartScreenState extends State<CartScreen> {
                       SliverToBoxAdapter(
                           child: Column(
                         children: [
-                          SizedBox(height: 15),
+                          SizedBox(height: 2.0.h),
                           Divider(color: Colors.grey[400]),
                           CartRow(
                             leftText:
@@ -115,7 +120,7 @@ class _CartScreenState extends State<CartScreen> {
                             isDark: true,
                           ),
                           SizedBox(
-                            height: 15,
+                            height: 2.0.h,
                           ),
                           MyButton(
                             text: 'Checkout',
@@ -147,20 +152,20 @@ class CartRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.symmetric(vertical: 1.5.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(leftText,
               style: myGoogleFont(
                 Colors.grey[400],
-                isDark == null ? 17 : 22,
+                isDark == null ? 13.0.sp : 17.0.sp,
                 FontWeight.w400,
               )),
           Text(rightText,
               style: myGoogleFont(
                   isDark == null ? Colors.grey[400] : darkColor,
-                  isDark == null ? 17 : 22,
+                  isDark == null ? 13.0.sp : 17.0.sp,
                   isDark == null ? FontWeight.w400 : FontWeight.w600)),
         ],
       ),

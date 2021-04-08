@@ -9,6 +9,7 @@ import 'package:Ecommerce/screens/toggle_screen.dart';
 import 'package:Ecommerce/services/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 class DrawerScreen extends StatelessWidget {
   logOut(BuildContext context) async {
@@ -21,8 +22,9 @@ class DrawerScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.black,
         body: Container(
-          padding: EdgeInsets.symmetric(vertical: 30, horizontal: 30),
+          padding: EdgeInsets.symmetric(vertical: 4.5.h, horizontal: 7.3.w),
           height: double.infinity,
           width: double.infinity,
           decoration: BoxDecoration(
@@ -34,17 +36,17 @@ class DrawerScreen extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     backgroundImage: NetworkImage(myUser.imageUrl),
-                    radius: 25,
+                    radius: 19.0.sp,
                   ),
-                  SizedBox(width: 10),
+                  SizedBox(width: 2.0.w),
                   Text(
                     myUser.userName,
-                    style: myGoogleFont(Colors.white, 18, FontWeight.w500),
+                    style: myGoogleFont(Colors.white, 14.0.sp, FontWeight.w500),
                   ),
                 ],
               ),
               SizedBox(
-                height: 30,
+                height: 4.5.h,
               ),
               DrawerTab('Profile', Icons.person_pin,
                   route: ProfileScreen.routeName),
@@ -88,7 +90,7 @@ class DrawerScreen extends StatelessWidget {
               //         return ProfileScreen();
               //       }));
               //     }),
-              SizedBox(height: 190),
+              SizedBox(height: 19.0.h),
               Row(
                 children: [
                   GestureDetector(
@@ -99,10 +101,11 @@ class DrawerScreen extends StatelessWidget {
                     },
                     child: Text(
                       'Sign-out ',
-                      style: myGoogleFont(yellowColor, 18, FontWeight.w500),
+                      style:
+                          myGoogleFont(yellowColor, 14.0.sp, FontWeight.w500),
                     ),
                   ),
-                  Icon(Icons.arrow_forward, size: 30, color: Colors.white)
+                  Icon(Icons.arrow_forward, size: 23.0.sp, color: Colors.white)
                 ],
               )
             ],
@@ -137,22 +140,26 @@ class DrawerTab extends StatelessWidget {
             children: [
               Icon(
                 icon,
-                size: 28,
+                size: 21.5.sp,
                 color: yellowColor,
               ),
-              SizedBox(width: 10),
+              SizedBox(width: 2.0.w),
               Text(
                 text,
-                style: myGoogleFont(Colors.white, 17, FontWeight.w500),
+                style: myGoogleFont(Colors.white, 13.0.sp, FontWeight.w500),
               )
             ],
           ),
           noDivider == true
               ? Container()
               : Container(
-                  margin: EdgeInsets.only(left: 44, top: 20, bottom: 20),
+                  margin: EdgeInsets.only(
+                    left: 10.0.w,
+                    top: 2.8.h,
+                    bottom: 2.8.h,
+                  ),
                   height: 1,
-                  width: 120,
+                  width: 29.0.w,
                   color: yellowColor
                   // Colors.grey[800],
                   )

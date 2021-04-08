@@ -3,6 +3,7 @@ import 'package:Ecommerce/providers/toggle_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 class EmptyOrders extends StatelessWidget {
   @override
@@ -11,24 +12,24 @@ class EmptyOrders extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-            padding: const EdgeInsets.only(left: 8.0, top: 5, bottom: 30),
+            padding: EdgeInsets.only(left: 2.0.w, top: 1.0.h, bottom: 5.0.h),
             child: backArrow(context)),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              padding: EdgeInsets.symmetric(horizontal: 3.5.w),
               child: Text(
                 'OPPS! YOU HAVEN\'T SENT ANY ORDERS YET',
                 textAlign: TextAlign.center,
-                style: myUpuntoFont(darkColor, 25, FontWeight.w600),
+                style: myUpuntoFont(darkColor, 19.0.sp, FontWeight.w600),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 15.0),
+              padding: EdgeInsets.symmetric(vertical: 2.3.h),
               child: Image.asset(
                 'images/fogg-87.png',
-                height: 300,
+                height: 47.0.h,
               ),
             ),
             Text(
@@ -36,7 +37,7 @@ class EmptyOrders extends StatelessWidget {
               style: GoogleFonts.raleway(
                 textStyle: TextStyle(
                     color: darkColor,
-                    fontSize: 18,
+                    fontSize: 14.0.sp,
                     fontWeight: FontWeight.w400),
               ),
             ),
@@ -44,8 +45,8 @@ class EmptyOrders extends StatelessWidget {
               padding: const EdgeInsets.only(top: 15.0),
               child: GestureDetector(
                 child: SizedBox(
-                  height: 50,
-                  width: 150,
+                  height: 8.0.h,
+                  width: 36.5.w,
                   child: FlatButton(
                     onPressed: () {
                       Navigator.pop(context);
@@ -57,12 +58,12 @@ class EmptyOrders extends StatelessWidget {
                         style: GoogleFonts.raleway(
                           textStyle: TextStyle(
                               color: Colors.white,
-                              fontSize: 16,
+                              fontSize: 12.5.sp,
                               fontWeight: FontWeight.w600),
                         )),
                     color: Colors.black,
                     shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
+                        borderRadius: BorderRadius.circular(7.0.sp)),
                   ),
                 ),
               ),

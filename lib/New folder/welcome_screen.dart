@@ -7,7 +7,6 @@ import 'package:Ecommerce/services/shared_pref.dart';
 import 'package:Ecommerce/widgets/custom_painter.dart';
 import 'package:Ecommerce/widgets/splash_content.dart';
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -46,7 +45,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
 
   @override
   void dispose() {
-    // timer.cancel();
+    timer.cancel();
     progressController.dispose();
     super.dispose();
   }
@@ -54,7 +53,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   Timer timer;
   int start = 1;
   void startTimer() {
-    const oneSec = const Duration(milliseconds: 1000);
+    const oneSec = const Duration(milliseconds: 500);
     timer = new Timer.periodic(
       oneSec,
       (Timer timer) {
@@ -107,38 +106,33 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                       CustomPaint(
                         foregroundPainter: DrawCircle(animation.value),
                         child: SizedBox(
-                          width: 17.0.w,
-                          height: 17.0.w,
+                          width: 70,
+                          height: 70,
                           child: GestureDetector(
                             onTapUp: (_) {
                               progressController.reverse();
-                              // setState(() {
-                              //   start = 1;
-                              //   timer.cancel();
-                              // });
+                              setState(() {
+                                start = 1;
+                                timer.cancel();
+                              });
                             },
                             onTapDown: (_) {
-                              // if (animation.value == 100) {
-                              //   print('Ahmed');
-                              // } else
-                              //  {
-                              //startTimer();
-                              progressController.forward().whenComplete(
-                                    () => Navigator.of(context)
-                                        .pushReplacementNamed(SignUp.routeName),
-                                  );
-                              // }
+                              if (animation.value == 100) {
+                                Navigator.pop(context);
+                              } else {
+                                startTimer();
+                                progressController.forward();
+                              }
                             },
                             child: Container(
                                 decoration: BoxDecoration(
-                                  color: darkColor,
-                                  borderRadius: BorderRadius.circular(38.5.sp),
-                                ),
+                                    color: darkColor,
+                                    borderRadius: BorderRadius.circular(50)),
                                 child: Center(
                                   child: Icon(
                                     Icons.arrow_forward_ios_outlined,
                                     color: Colors.white,
-                                    size: 23.0.sp,
+                                    size: 30,
                                   ),
                                 )),
                           ),
@@ -162,11 +156,11 @@ class BuildDot extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedContainer(
       duration: Duration(milliseconds: 400),
-      margin: EdgeInsets.only(right: 1.5.w, bottom: 0),
-      height: 1.0.h,
-      width: currentPage == index ? 4.5.w : 1.5.w,
+      margin: EdgeInsets.only(right: 6, bottom: 0),
+      height: 6,
+      width: currentPage == index ? 15 : 6,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(3.0.sp),
+          borderRadius: BorderRadius.circular(3),
           color: currentPage == index ? darkColor : Colors.grey[300]),
     );
   }

@@ -6,6 +6,7 @@ import 'package:Ecommerce/providers/user_provider.dart';
 import 'package:Ecommerce/widgets/my_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 class EditProfile extends StatefulWidget {
   static const routeName = '/edit-profile';
@@ -89,7 +90,7 @@ class _EditProfileState extends State<EditProfile> {
                           imageFilter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                           child: Image.network(
                             userProvider.imageUrl,
-                            height: 300,
+                            height: 47.0.h,
                             width: double.infinity,
                             fit: BoxFit.cover,
                           ),
@@ -107,8 +108,8 @@ class _EditProfileState extends State<EditProfile> {
                                 },
                                 child: Text(
                                   'Cancel',
-                                  style: myUpuntoFont(
-                                      Colors.grey[300], 22, FontWeight.w300),
+                                  style: myUpuntoFont(Colors.grey[300], 17.0.sp,
+                                      FontWeight.w300),
                                 ),
                               ),
                               Column(
@@ -116,7 +117,7 @@ class _EditProfileState extends State<EditProfile> {
                                   Text(
                                     'Edit Profile',
                                     style: myUpuntoFont(
-                                        yellowColor, 25, FontWeight.w400),
+                                        yellowColor, 19.0.sp, FontWeight.w400),
                                   ),
                                 ],
                               ),
@@ -127,18 +128,18 @@ class _EditProfileState extends State<EditProfile> {
                                 },
                                 child: Text(
                                   'Save',
-                                  style: myUpuntoFont(
-                                      Colors.grey[300], 22, FontWeight.w300),
+                                  style: myUpuntoFont(Colors.grey[300], 17.0.sp,
+                                      FontWeight.w300),
                                 ),
                               ),
                             ],
                           ),
                         ),
                         Positioned(
-                          bottom: 90,
-                          left: 150,
+                          bottom: 14.0.h,
+                          left: 36.5.w,
                           child: CircleAvatar(
-                            radius: 60,
+                            radius: 46.0.sp,
                             backgroundImage:
                                 NetworkImage(userProvider.imageUrl),
                           ),
@@ -157,10 +158,10 @@ class _EditProfileState extends State<EditProfile> {
                       ],
                     ),
                     SizedBox(
-                      height: 25,
+                      height: 4.0.h,
                     ),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      padding: EdgeInsets.symmetric(horizontal: 5.0.w),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -215,13 +216,17 @@ class TextAndTextField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10.0),
+          padding: EdgeInsets.symmetric(vertical: 1.5.h),
           child: Text(
             text,
-            style: myUpuntoFont(Colors.grey[300], 16, FontWeight.w500),
+            style: myUpuntoFont(Colors.grey[300], 12.0.sp, FontWeight.w500),
           ),
         ),
-        MyTextField(text, controller, 'Cannot be empty'),
+        MyTextField(
+          text,
+          controller,
+          'Cannot be empty',
+        ),
       ],
     );
   }
