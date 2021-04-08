@@ -51,17 +51,24 @@ class _ProductsOverviewState extends State<ProductsOverview> {
                   style: myGoogleFont(darkColor, 13.5.sp, FontWeight.w600),
                 ),
                 Spacer(),
-                IconButton(
-                    icon: Icon(
-                      Icons.search_rounded,
-                      color: darkColor,
-                      size: 23.0.sp,
-                    ),
-                    onPressed: () {
-                      setState(() {
-                        isSearch = true;
-                      });
-                    }),
+                GestureDetector(
+                  child: Icon(
+                    Icons.search_rounded,
+                    color: darkColor,
+                    size: 23.0.sp,
+                  ),
+                )
+                // IconButton(
+                //     icon: Icon(
+                //       Icons.search_rounded,
+                //       color: darkColor,
+                //       size: 23.0.sp,
+                //     ),
+                //     onPressed: () {
+                //       setState(() {
+                //         isSearch = true;
+                //       });
+                //     }),
               ],
             );
           },

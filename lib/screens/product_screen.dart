@@ -8,6 +8,7 @@ import 'package:Ecommerce/widgets/my_button.dart';
 import 'package:Ecommerce/widgets/size_number.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 
 class ProductScreen extends StatelessWidget {
   final Product myProduct;
@@ -51,17 +52,18 @@ class ProductScreen extends StatelessWidget {
       child: Scaffold(
           body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          padding: EdgeInsets.symmetric(horizontal: 5.0.w),
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 15.0),
+                padding: EdgeInsets.only(top: 2.5.h),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     GestureDetector(
                       child: Icon(
                         Icons.arrow_back_ios,
+                        size: 15.0.sp,
                       ),
                       onTap: () {
                         Navigator.pop(context);
@@ -72,6 +74,7 @@ class ProductScreen extends StatelessWidget {
                         : GestureDetector(
                             child: Icon(
                               Icons.remove,
+                              size: 15.0.sp,
                             ),
                             onTap: () async {
                               await showDialoge(context);
@@ -82,29 +85,29 @@ class ProductScreen extends StatelessWidget {
               ),
               Image.network(
                 myProduct.imageUrl,
-                height: 250,
+                height: 39.0.h,
                 fit: BoxFit.cover,
               ),
               Text(
                 myProduct.title,
                 textAlign: TextAlign.center,
-                style: myGoogleFont(darkColor, 27, FontWeight.w700),
+                style: myGoogleFont(darkColor, 20.0.sp, FontWeight.w700),
               ),
               Text(
                 'STYLE:C5A20-100',
-                style: myGoogleFont(Colors.grey[350], 17, FontWeight.w400),
+                style: myGoogleFont(Colors.grey[350], 13.0.sp, FontWeight.w400),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10.0),
+                padding: EdgeInsets.symmetric(vertical: 1.5.h),
                 child: Text(
                   myProduct.desc,
-                  style: myGoogleFont(darkColor, 19, FontWeight.w400),
+                  style: myGoogleFont(darkColor, 13.0.sp, FontWeight.w400),
                   textAlign: TextAlign.center,
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(bottom: 10.0),
-                height: 100,
+                margin: EdgeInsets.only(bottom: 1.5.h),
+                height: 12.0.h,
                 width: double.infinity,
                 child: Consumer<TabBarProvider>(
                   builder: (context, provider, child) {
