@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 
 class Product with ChangeNotifier {
-  String title;
-  String desc;
-  String imageUrl;
-  String id;
-  double price;
+  final String title;
+  final String desc;
+  final String imageUrl;
+  final String id;
+  final double price;
   bool isFavorite;
 
   Product(

@@ -7,7 +7,7 @@ import 'package:sizer/sizer.dart';
 
 class CartItem extends StatelessWidget {
   final Cart cart;
-  CartItem(this.cart);
+  const CartItem(this.cart);
   returnShowDialog(BuildContext context) async {
     return await showDialog(
         context: context,

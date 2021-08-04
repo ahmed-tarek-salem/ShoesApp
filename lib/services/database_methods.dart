@@ -154,13 +154,14 @@ class DatabaseMethods {
       'amount': order.amount.toString(),
       'listOfProducts': order.listOfProducts
           .map((e) => {
+                // بحول الكارت اللي هو بارامتر للماب إلى مجرد جسون "ماب" عشان أحطه في الفايربيز
                 'title': e.myProduct.title,
                 'price': e.myProduct.price,
                 'quantity': e.quantity,
                 'id': e.myProduct.id,
                 'imageUrl': e.myProduct.imageUrl
               })
-          .toList(),
+          .toList(), // بحول كل المنتجات لليست عشان اضيفها في الفايربيز كليست
     });
   }
 
@@ -216,7 +217,7 @@ class DatabaseMethods {
     });
   }
 
-  removeProduct(String id) {
+  removeProduct(String id) async {
     refProducts.doc(id).delete();
   }
 }

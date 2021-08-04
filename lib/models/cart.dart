@@ -1,9 +1,9 @@
 import 'package:Ecommerce/models/product.dart';
 
 class Cart {
-  Product myProduct;
-  int size;
-  int quantity;
+  final Product myProduct;
+  final int size;
+  final int quantity;
 
-  Cart({this.myProduct, this.size, this.quantity});
+  const Cart({this.myProduct, this.size, this.quantity});
 }

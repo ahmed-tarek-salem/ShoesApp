@@ -1,9 +1,9 @@
 import 'package:Ecommerce/models/cart.dart';
 
 class Order {
-  String id;
-  double amount;
-  List<Cart> listOfProducts;
-  DateTime dateTime;
-  Order({this.id, this.amount, this.dateTime, this.listOfProducts});
+  final String id;
+  final double amount;
+  final List<Cart> listOfProducts;
+  final DateTime dateTime;
+  const Order({this.id, this.amount, this.dateTime, this.listOfProducts});
 }

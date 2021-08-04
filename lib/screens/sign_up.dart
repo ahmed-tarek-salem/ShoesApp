@@ -98,7 +98,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin {
     User myUser = User(
       phone: null,
       imageUrl:
-          "https://www.xovi.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png",
+          "https://firebasestorage.googleapis.com/v0/b/shopappfromscratch.appspot.com/o/user.png?alt=media&token=14370a82-c0da-4b84-a44e-8df425741870",
       userId: userId,
       userName: nameCont.text,
       address: null,

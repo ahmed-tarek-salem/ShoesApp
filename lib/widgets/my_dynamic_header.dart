@@ -60,8 +60,8 @@ class MyDynamicHeader extends SliverPersistentHeaderDelegate {
                     children: [
                       Text(
                         provider.myUser.userName,
-                        style: myGoogleFont(
-                            Colors.white, 25.0.sp, FontWeight.w500),
+                        style:
+                            myGoogleFont(yellowColor, 25.0.sp, FontWeight.w500),
                       ),
                       Padding(
                         padding: EdgeInsets.only(top: 1.0.h, bottom: 0.2.h),

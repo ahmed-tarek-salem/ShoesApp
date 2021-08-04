@@ -8,9 +8,10 @@ class MyTextField extends StatelessWidget {
   final String validationText;
   final bool isNameEdit;
   final bool isPassword;
+  final bool isCardNumber;
   final TextEditingController controller;
   MyTextField(this.hint, this.controller, this.validationText,
-      {this.login, this.isNameEdit, this.isPassword});
+      {this.login, this.isNameEdit, this.isPassword, this.isCardNumber});
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +20,16 @@ class MyTextField extends StatelessWidget {
       child: TextFormField(
         obscureText: isPassword == true ? true : false,
         style: isNameEdit == true
-            ? myGoogleFont(Colors.white, 15.5.sp, FontWeight.w600)
+            ? myGoogleFont(yellowColor, 15.5.sp, FontWeight.w600)
             : myGoogleFont(darkColor, 14.0.sp, FontWeight.w500),
         controller: controller,
         validator: (val) {
           if (val.length == 0 && login != true) {
             return validationText;
+          }
+          if (isCardNumber == true && this.controller.text.length != 16) {
+            print(controller.text.length);
+            return 'Not vaild';
           }
         },
         decoration: InputDecoration(
