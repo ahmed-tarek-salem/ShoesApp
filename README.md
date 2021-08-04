@@ -6,6 +6,31 @@ Flutter shop app linked to firebase firestore and firebase storage as database, 
 
 https://drive.google.com/file/d/12XFKnhL_P9HSntLhE7V_hUND5dwz8s5Q/view
 
+## Screenshots
+<p align="center">
+
+<img src='Ecommerce-Screenshots/gif1.gif' width="300" /> 
+<img src='Ecommerce-Screenshots/gif2.gif' width="300" />
+<img src='Ecommerce-Screenshots/gif3.gif' width="300" />
+<img src='Ecommerce-Screenshots/img1.jpg' width="400" /> 
+<img src='Ecommerce-Screenshots/img2.jpg' width="400" />
+<img src='Ecommerce-Screenshots/img3.jpg' width="400" />
+<img src='Ecommerce-Screenshots/img5.jpg' width="400" />
+<img src='Ecommerce-Screenshots/img6.jpg' width="400" />
+<img src='Ecommerce-Screenshots/img7.jpg' width="400" />
+<img src='Ecommerce-Screenshots/img8.jpg' width="400" />
+<img src='Ecommerce-Screenshots/img9.jpg' width="400" />
+<img src='Ecommerce-Screenshots/img10.jpg' width="400" />
+<img src='Ecommerce-Screenshots/img11.jpg' width="400" />
+<img src='Ecommerce-Screenshots/img12.jpg' width="400" />
+<img src='Ecommerce-Screenshots/img13.jpg' width="400" />
+<img src='Ecommerce-Screenshots/img14.jpg' width="400" />
+<img src='Ecommerce-Screenshots/img15.jpg' width="400" />
+<img src='Ecommerce-Screenshots/img16.jpg' width="400" />
+<img src='Ecommerce-Screenshots/img17.jpg' width="400" />
+<img src='Ecommerce-Screenshots/img18.jpg' width="400" />
+  </p>
+
 
 ## Features
 - Full authentication with firebase containing (Sign in, Sign up, logout).
@@ -20,16 +45,8 @@ https://drive.google.com/file/d/12XFKnhL_P9HSntLhE7V_hUND5dwz8s5Q/view
 - Adding or deleting products to your cart.
 - Adding or deleting products to your favorite list.
 
-## Screenshots
-<img src='Ecommerce-Screenshots/gif1.gif' width="300" /> 
-<img src='Ecommerce-Screenshots/gif2.gif' width="300" />
-<img src='Ecommerce-Screenshots/gif3.gif' width="300" />
-<img src='Ecommerce-Screenshots/img1.jpg' width="400" /> <img src='Ecommerce-Screenshots/img2.jpg' width="400" /> <img src='Ecommerce-Screenshots/img3.jpg' width="400" />
-<img src='Ecommerce-Screenshots/img5.jpg' width="400" /><img src='Ecommerce-Screenshots/img6.jpg' width="400" /><img src='Ecommerce-Screenshots/img7.jpg' width="400" />
-<img src='Ecommerce-Screenshots/img8.jpg' width="400" /><img src='Ecommerce-Screenshots/img9.jpg' width="400" /><img src='Ecommerce-Screenshots/img10.jpg' width="400" />
-<img src='Ecommerce-Screenshots/img11.jpg' width="400" /><img src='Ecommerce-Screenshots/img12.jpg' width="400" /><img src='Ecommerce-Screenshots/img13.jpg' width="400" />
-<img src='Ecommerce-Screenshots/img14.jpg' width="400" /><img src='Ecommerce-Screenshots/img15.jpg' width="400" /><img src='Ecommerce-Screenshots/img16.jpg' width="400" />
-<img src='Ecommerce-Screenshots/img17.jpg' width="400" /><img src='Ecommerce-Screenshots/img18.jpg' width="700" />
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
